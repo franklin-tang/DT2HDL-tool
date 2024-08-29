@@ -7,7 +7,6 @@ import transfer_read
 # file_write_path = 'DT_d_a.sv'
 # module_name = 'DT_d_a'
 file_read_path = 'classificationDT.dot'
-# file_write_path = 'C:/ProgramCode/FPGA/DT_EF_detection_1/DT_EF_detection_1.srcs/sources_1/import/DT_c_a.sv'
 file_write_path = 'DT_c_a.sv'
 module_name = 'DT_c_a'
 
@@ -18,7 +17,6 @@ input_bits = 8
 output_bits = math.ceil(math.sqrt(leaves['class'].max()))  # the output bits width decided by the number of classes
 
 nodes_number = nodes['number']  # get the numbers of the nodes
-# print(nodes_number)  # the index and the numbers of the nodes
 
 with open(file_write_path, 'w') as file:  # start to write the file
     # module head and in out definitions
@@ -99,7 +97,6 @@ with open(file_write_path, 'w') as file:  # start to write the file
                     lut.append('0')  # with the condition of false
             else:  # with no condition
                 lut.append('?')
-        # print(lut)
         new_row = pd.DataFrame({'LUT': [''.join(lut)], 'class': [leaves.at[i, 'class']]})  # add a new row to LTUs
         luts = pd.concat([luts, new_row], ignore_index=True)
     print(luts)
