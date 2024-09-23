@@ -14,7 +14,7 @@ nodes, chains, leaves, benches = transfer_read.readfile(file_read_path)  # get p
 
 input_bits = 8
 # output_bits = 1
-output_bits = math.ceil(math.sqrt(leaves['class'].max()))  # the output bits width decided by the number of classes
+output_bits = math.floor(math.log2(leaves['class'].max())) + 1  # the output bits width decided by the number of classes
 
 nodes_number = nodes['number']  # get the numbers of the nodes
 
