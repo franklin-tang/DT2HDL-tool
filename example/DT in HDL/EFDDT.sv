@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps 
 
-module DT_d_a (Va,Vb,Vc,Ia,Ib,Ic,cls);
+module EFDDT (Va,Vb,Vc,Ia,Ib,Ic,cls);
 
 parameter N = 'd8;
 parameter C = 'd1;
